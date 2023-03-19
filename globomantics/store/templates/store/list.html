@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Electronics Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
 
-<h1>Hello there, this is globomantics electronics page</h1>
+<h1>Hello there, {{ request.session.customer}} visited Globomantics store  {{ request.COOKIES.visits|default:"1"}} times.</h1>
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -65,5 +66,6 @@
     </tr>
     {% endif %}
     </table>
+<a href="/store/logout">Logout</a>
 </body>
 </html>
